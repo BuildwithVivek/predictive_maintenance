@@ -4,7 +4,6 @@ from sklearn.preprocessing import LabelEncoder,OrdinalEncoder
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import joblib
 import matplotlib.pyplot as plt
 from sklearn import naive_bayes
 from sklearn.ensemble import VotingClassifier
@@ -42,9 +41,9 @@ voting_clf = VotingClassifier(estimators=[
 
 voting_clf.fit(X_train, y_train)
 
-joblib.dump(tree_classifier, 'decision_tree_model.joblib')
-joblib.dump(naive_bayes, 'naive_bayes_model.joblib')
-joblib.dump(log_reg, 'logistic_regression_model.joblib')
+# joblib.dump(tree_classifier, 'decision_tree_model.joblib')
+# joblib.dump(naive_bayes, 'naive_bayes_model.joblib')
+# joblib.dump(log_reg, 'logistic_regression_model.joblib')
 
 y_pred_dt = tree_classifier.predict(X_test)
 y_pred_nb = naive_bayes.predict(X_test)
